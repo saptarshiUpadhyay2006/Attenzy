@@ -4,7 +4,7 @@ pandas
 scikit-learn
 
 dlib-bin
-face_recognition
+face_recognition_models
 
 supabase==2.15.3
 bcrypt
