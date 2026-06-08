@@ -8,7 +8,8 @@ from src.components.dialog_auto_enroll import auto_enroll_dialog
 def main():
     st.set_page_config(
         page_title='Attenzy- Attendance with AI',
-        page_icon= "https://i.ibb.co/Kx7sWmDR/logo.png"
+        page_icon= "https://i.ibb.co/Kx7sWmDR/logo.png",
+        layout="wide"
     )
 
     if 'login_type' not in st.session_state:

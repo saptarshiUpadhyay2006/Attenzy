@@ -236,18 +236,6 @@ def teacher_tab_attendance_records():
 
     df = pd.DataFrame(data)
 
-    summary['Attendance Stats'] = (
-        "✅ " + summary['Present_Count'].astype(str) + " /"
-        + summary['Total_Count'].astype(str) + ' Students'
-    )
-
-    display_df = ( summary.sort_values(by='ts_group' ,ascending=False)
-                  [['Time', 'Subject', 'Subject Code', 'Attendance Stats']]
-                  )
-    
-    st.dataframe(display_df, width='stretch', hide_index=True)
-
-
     summary = (
         df.groupby(['ts_group', 'Time', 'Subject', 'Subject Code'])
         .agg(
@@ -274,8 +262,8 @@ def login_teacher(username,password):
     teacher=teacher_login(username,password)
     if teacher:
         st.session_state.user_role="teacher"
-        st.session_state.user_data=teacher
-        st.session_state.logged_in=True
+        st.session_state.teacher_data=teacher
+        st.session_state.is_logged_in=True
         return True
     else:
         return False
@@ -284,13 +272,13 @@ def teacher_screen_login():
     style_background_dashboard()
     style_base_layout()
 
-    c1, c2 = st.columns(2, vertical_alignment='center', gap='large')
+    c1, c2 = st.columns([2, 3], vertical_alignment='center', gap='medium')
     with c1:
         header_dashboard()
     with c2:
         # Ensure unique key for "Go back to Home" button in login screen
         if st.button("Go back to Home", type='secondary', key='loginbackbtn_teacher_login_screen', shortcut='control+backspace'):
-            st.session_state['login-type'] = None
+            st.session_state['login_type'] = None
             st.rerun()
 
     st.header('Login using password', text_alignment='center')
@@ -334,13 +322,13 @@ def teacher_screen_register():
     style_background_dashboard()
     style_base_layout()
 
-    c1, c2 = st.columns(2, vertical_alignment='center', gap='large')
+    c1, c2 = st.columns([2, 3], vertical_alignment='center', gap='medium')
     with c1:
         header_dashboard()
     with c2:
         # Ensure unique key for "Go back to Home" button in register screen
         if st.button("Go back to Home", type='secondary', key='loginbackbtn_teacher_register_screen', shortcut='control+backspace'):
-            st.session_state['login-type'] = None
+            st.session_state['login_type'] = None
             st.rerun()
 
     st.header('Register with your details', text_alignment='center')
