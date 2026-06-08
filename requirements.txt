@@ -6,12 +6,11 @@ scikit-learn
 dlib-bin
 face_recognition
 
-supabase
+supabase==2.15.3
 bcrypt
 
 segno
 pillow
-
 
 setuptools<70.0.0
 
