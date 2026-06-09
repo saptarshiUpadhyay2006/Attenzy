@@ -8,7 +8,10 @@ def style_background_home():
         <style>
 
                 .stApp {
-                    background: radial-gradient(circle at top right, #3B429F, #1F235A, #0A0C27) !important;
+                    background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 60%),
+                                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.22) 0%, transparent 60%),
+                                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.18) 0%, transparent 50%),
+                                linear-gradient(180deg, #0a0b1e 0%, #060713 100%) !important;
                 }
 
                 .stApp div[data-testid="stColumn"]:has(.role-title) {
@@ -63,6 +66,20 @@ def style_background_home():
                     transform: scale(1.06) !important;
                     filter: invert(1) brightness(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.25)) !important;
                 }
+
+                .home-section-title {
+                     font-family: 'Plus Jakarta Sans', sans-serif !important;
+                     font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+                     font-weight: 800 !important;
+                     text-align: center;
+                     background: linear-gradient(135deg, #FFFFFF 30%, #A2B4FF 100%);
+                     -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent;
+                     margin-top: 4.5rem !important;
+                     margin-bottom: 2rem !important;
+                     letter-spacing: -0.5px !important;
+                     text-shadow: 0 0 30px rgba(162, 180, 255, 0.1);
+                 }
         </style>  
 
                 """
@@ -76,16 +93,19 @@ def style_background_dashboard():
         <style>
                 /* Set standard font for all elements inside dashboard (excluding div and span to avoid overriding icon fonts) */
                 body, input, select, textarea, button, label, p {
-                    font-family: 'Outfit', sans-serif !important;
+                    font-family: 'Plus Jakarta Sans', sans-serif !important;
                 }
 
                 .stApp {
-                    background: radial-gradient(circle at top right, #1F235A, #0E102F, #050614) !important;
+                    background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.24) 0%, transparent 60%),
+                                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.18) 0%, transparent 60%),
+                                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.14) 0%, transparent 50%),
+                                linear-gradient(180deg, #070814 0%, #030409 100%) !important;
                 }
 
                 .stApp h1, .stApp h2, .stApp h3, .stApp h4 {
                     color: #FFFFFF !important;
-                    font-family: 'Outfit', sans-serif !important;
+                    font-family: 'Plus Jakarta Sans', sans-serif !important;
                 }
 
                 .stApp p, .stApp label, .stApp span, .stApp div[data-testid="stMarkdown"] p {
@@ -105,19 +125,35 @@ def style_background_dashboard():
 
                 /* Text inputs inside dashboard */
                 div[data-testid="stTextInput"] input {
-                    background-color: rgba(255, 255, 255, 0.03) !important;
-                    color: #FFFFFF !important;
-                    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                    background-color: #FFFFFF !important;
+                    color: #000000 !important;
+                    border: 1px solid rgba(0, 0, 0, 0.15) !important;
                     border-radius: 1rem !important;
                     padding: 12px 16px !important;
                     font-size: 1rem !important;
                     transition: all 0.3s ease !important;
                 }
                 
+                /* Style placeholders to be semi-transparent black so typed text is clearly visible */
+                div[data-testid="stTextInput"] input::placeholder {
+                    color: rgba(0, 0, 0, 0.5) !important;
+                    opacity: 1 !important;
+                }
+                div[data-testid="stTextInput"] input::-webkit-input-placeholder {
+                    color: rgba(0, 0, 0, 0.5) !important;
+                }
+                div[data-testid="stTextInput"] input::-moz-placeholder {
+                    color: rgba(0, 0, 0, 0.5) !important;
+                    opacity: 1 !important;
+                }
+                div[data-testid="stTextInput"] input:-ms-input-placeholder {
+                    color: rgba(0, 0, 0, 0.5) !important;
+                }
+                
                 div[data-testid="stTextInput"] input:focus {
                     border-color: #5865F2 !important;
                     box-shadow: 0 0 12px rgba(88, 101, 242, 0.25) !important;
-                    background-color: rgba(255, 255, 255, 0.06) !important;
+                    background-color: #FFFFFF !important;
                 }
 
                 div[data-testid="stTextInput"] label {
@@ -133,7 +169,6 @@ def style_background_dashboard():
                     color: #FFFFFF !important;
                     border: 1px solid rgba(255, 255, 255, 0.08) !important;
                     border-radius: 1rem !important;
-                    padding: 4px 8px !important;
                     transition: all 0.3s ease !important;
                 }
 
@@ -250,21 +285,53 @@ def style_background_dashboard():
 def style_base_layout():
     st.markdown("""
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@100..900&display=swap');
 
-                
+        /* Global Input text/bg Styling for high contrast */
+        input {
+            background-color: #FFFFFF !important;
+            color: #000000 !important;
+        }
+
+        /* Global Input Placeholder Styling */
+        input::placeholder {
+            color: rgba(0, 0, 0, 0.5) !important;
+            opacity: 1 !important;
+        }
+        input::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.5) !important;
+        }
+        input::-moz-placeholder {
+            color: rgba(0, 0, 0, 0.5) !important;
+            opacity: 1 !important;
+        }
+        input:-ms-input-placeholder {
+            color: rgba(0, 0, 0, 0.5) !important;
+        }
+        input:-moz-placeholder {
+            color: rgba(0, 0, 0, 0.5) !important;
+            opacity: 1 !important;
+        }
+
          /* Hide Top Bar of streamlit */
-                
-            #MainMenu, footer, header {
-                visibility: hidden;
-            }
+                            #MainMenu, footer, header {
+                 visibility: hidden;
+             }
+             
+             /* Style QnA/FAQ expander text to be white */
+             div[data-testid="stExpander"] p, 
+             div[data-testid="stExpander"] summary, 
+             div[data-testid="stExpander"] summary *,
+             div[data-testid="stExpander"] div {
+                 color: #FFFFFF !important;
+             }
                 
             .block-container {
                 padding-top:1.5rem !important;    
             }
 
             h1 {
-                font-family: 'Outfit', sans-serif !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 900 !important;
                 font-size: clamp(2rem, 5vw, 3.5rem) !important;
                 line-height:1.1 !important;
@@ -274,7 +341,7 @@ def style_base_layout():
                 
 
             h2 {
-                font-family: 'Outfit', sans-serif !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 800 !important;
                 font-size: clamp(1.5rem, 3.5vw, 2.2rem) !important;
                 line-height:1.2 !important;
@@ -284,7 +351,7 @@ def style_base_layout():
             }
                 
             h3, h4, p {
-                font-family: 'Outfit', sans-serif !important;    
+                font-family: 'Plus Jakarta Sans', sans-serif !important;    
             }
 
             h3 {
@@ -292,7 +359,7 @@ def style_base_layout():
             }
                 
             .glow-title {
-                font-family: 'Outfit', sans-serif !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 900 !important;
                 font-size: clamp(2.5rem, 6vw, 4rem) !important;
                 background: linear-gradient(135deg, #FFFFFF 0%, #A2B4FF 100%);
@@ -304,7 +371,7 @@ def style_base_layout():
             }
 
             .role-title {
-                font-family: 'Outfit', sans-serif !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 800 !important;
                 font-size: clamp(1.3rem, 3vw, 2rem) !important;
                 color: #FFFFFF !important;
@@ -334,7 +401,7 @@ def style_base_layout():
                 background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%) !important;
                 color: white !important;
                 padding: 12px 28px !important;
-                font-family: 'Outfit', sans-serif !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 700 !important;
                 font-size: 1.05rem !important;
                 border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -347,7 +414,7 @@ def style_base_layout():
                 background: linear-gradient(135deg, #EB459E 0%, #C43580 100%) !important;
                 color: white !important;
                 padding: 12px 28px !important;
-                font-family: 'Outfit', sans-serif !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 700 !important;
                 font-size: 1.05rem !important;
                 border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -360,7 +427,7 @@ def style_base_layout():
                 background: rgba(255, 255, 255, 0.06) !important;
                 color: white !important;
                 padding: 12px 28px !important;
-                font-family: 'Outfit', sans-serif !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 700 !important;
                 font-size: 1.05rem !important;
                 border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -381,6 +448,35 @@ def style_base_layout():
             button[kind="tertiary"]:hover {
                 background: rgba(255, 255, 255, 0.12) !important;
                 box-shadow: 0 8px 25px rgba(255, 255, 255, 0.08) !important;
+            }
+
+            /* Mobile responsiveness for all columns and components */
+            @media (max-width: 768px) {
+                /* Force all st.columns layout wrappers to stack vertically */
+                div[data-testid="stHorizontalBlock"] {
+                    flex-direction: column !important;
+                    gap: 1.5rem !important;
+                }
+                div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"] {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    margin-bottom: 0.5rem !important;
+                }
+                /* Make subject cards fit smaller screens beautifully */
+                .subject-card {
+                    padding: 18px !important;
+                    border-radius: 16px !important;
+                }
+                .stApp div[data-testid="stColumn"]:has(.role-title) {
+                    padding: 1.5rem !important;
+                }
+                /* Center main portal header text elements on mobile */
+                h1, h2, .glow-title, .role-title {
+                    text-align: center !important;
+                }
+                .glow-title {
+                    font-size: clamp(2rem, 8vw, 3rem) !important;
+                }
             }
         </style>  
 

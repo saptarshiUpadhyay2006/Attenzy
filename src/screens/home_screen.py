@@ -104,7 +104,7 @@ def home_screen():
             st.rerun()
 
     # Metrics Section
-    st.markdown("<h3 style='text-align:center; margin-top:4rem; margin-bottom:1.5rem; color:#FFFFFF;'>Metrics That Matter</h3>", unsafe_allow_html=True)
+    st.markdown("<h2 class='home-section-title'>Metrics That Matter</h2>", unsafe_allow_html=True)
     st.markdown("""
         <div class='metrics-grid-container'>
             <div class='stat-card'>
@@ -123,7 +123,7 @@ def home_screen():
     """, unsafe_allow_html=True)
 
     # Features Section
-    st.markdown("<h3 style='text-align:center; margin-top:4rem; margin-bottom:1.5rem; color:#FFFFFF;'>Core Capabilities</h3>", unsafe_allow_html=True)
+    st.markdown("<h2 class='home-section-title'>Core Capabilities</h2>", unsafe_allow_html=True)
     st.markdown("""
         <div class='grid-container'>
             <div class='feature-card'>
@@ -142,7 +142,7 @@ def home_screen():
     """, unsafe_allow_html=True)
 
     # FAQs Section
-    st.markdown("<h3 style='text-align:center; margin-top:4rem; margin-bottom:1.5rem; color:#FFFFFF;'>Frequently Asked Questions</h3>", unsafe_allow_html=True)
+    st.markdown("<h2 class='home-section-title'>Frequently Asked Questions</h2>", unsafe_allow_html=True)
     
     with st.expander("How does the face recognition system work?"):
         st.write("Attenzy processes uploaded classroom photos or live camera inputs, extracting unique 128-dimensional facial embeddings. These are matched against enrolled student records in real time using a pre-trained SVM classifier.")
