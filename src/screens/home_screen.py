@@ -27,22 +27,40 @@ def home_screen():
             margin-bottom: 2rem;
         }
         .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 1.5rem;
-            padding: 1.5rem;
+            padding: 1.8rem;
             margin-bottom: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
             min-height: 160px;
             height: auto;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
         }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #5865F2, #EB459E);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
         .feature-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(88, 101, 242, 0.3);
-            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(88, 101, 242, 0.08);
         }
         .feature-title {
             color: #FFFFFF !important;
@@ -56,16 +74,35 @@ def home_screen():
             line-height: 1.4 !important;
         }
         .stat-card {
+            position: relative;
+            overflow: hidden;
             text-align: center;
-            background: linear-gradient(135deg, rgba(88, 101, 242, 0.06) 0%, rgba(235, 69, 158, 0.06) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.04) 0%, rgba(235, 69, 158, 0.04) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 1.5rem;
             padding: 1.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .stat-card:hover::after {
+            opacity: 1;
         }
         .stat-card:hover {
-            background: linear-gradient(135deg, rgba(88, 101, 242, 0.1) 0%, rgba(235, 69, 158, 0.1) 100%);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.07) 0%, rgba(235, 69, 158, 0.07) 100%);
+            transform: translateY(-4px);
+            border-color: rgba(235, 69, 158, 0.25);
+            box-shadow: 0 12px 30px rgba(235, 69, 158, 0.12);
         }
         .stat-val {
             font-size: 2.2rem !important;

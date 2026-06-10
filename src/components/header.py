@@ -14,7 +14,7 @@ def header_home():
     logo_src = f"data:image/png;base64,{logo_b64}" if logo_b64 else "https://i.ibb.co/Kx7sWmDR/logo.png"
     st.markdown(f"""
             <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:30px; margin-top:10px;">
-            <img src="{logo_src}" style="height:180px;" />
+            <img src="{logo_src}" class="pulse-logo" style="height:180px;" />
             <h1 class="glow-title">Attenzy</h1>
             </div>
                 

@@ -6,23 +6,23 @@ def style_background_home():
 
     st.markdown("""
         <style>
-
                 .stApp {
-                    background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 60%),
-                                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.22) 0%, transparent 60%),
-                                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.18) 0%, transparent 50%),
-                                linear-gradient(180deg, #0a0b1e 0%, #060713 100%) !important;
+                    background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.24) 0%, transparent 60%),
+                                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.18) 0%, transparent 60%),
+                                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.14) 0%, transparent 50%),
+                                linear-gradient(180deg, #070814 0%, #030409 100%) !important;
                 }
 
                 .stApp div[data-testid="stColumn"]:has(.role-title) {
-                    background: rgba(255, 255, 255, 0.04) !important;
-                    backdrop-filter: blur(12px) !important;
-                    -webkit-backdrop-filter: blur(12px) !important;
-                    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                    background: rgba(255, 255, 255, 0.03) !important;
+                    backdrop-filter: blur(16px) !important;
+                    -webkit-backdrop-filter: blur(16px) !important;
+                    border: 1px solid rgba(255, 255, 255, 0.06) !important;
                     padding: 2.5rem !important;
                     border-radius: 2rem !important;
-                    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
-                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+                    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+                    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+                    position: relative;
                 }
 
                 /* Center the stVerticalBlock inside the stColumn */
@@ -49,41 +49,51 @@ def style_background_home():
                 }
 
                 .stApp div[data-testid="stColumn"]:has(.role-title):hover {
-                    transform: translateY(-8px) !important;
-                    border-color: rgba(88, 101, 242, 0.4) !important;
-                    box-shadow: 0 12px 40px 0 rgba(88, 101, 242, 0.25) !important;
-                    background: rgba(255, 255, 255, 0.07) !important;
+                    transform: translateY(-10px) !important;
+                    border-color: rgba(88, 101, 242, 0.5) !important;
+                    box-shadow: 0 20px 45px 0 rgba(88, 101, 242, 0.22) !important;
+                    background: rgba(255, 255, 255, 0.06) !important;
                 }
 
                 .stApp div[data-testid="stColumn"]:has(.role-title) img {
                     display: block;
                     margin: 0 auto !important;
                     filter: invert(1) brightness(0.95) !important;
-                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+                    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
                 }
 
                 .stApp div[data-testid="stColumn"]:has(.role-title):hover img {
-                    transform: scale(1.06) !important;
-                    filter: invert(1) brightness(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.25)) !important;
+                    transform: scale(1.08) !important;
+                    filter: invert(1) brightness(1) drop-shadow(0 0 12px rgba(88, 101, 242, 0.3)) !important;
                 }
 
-                .home-section-title {
+                 .home-section-title {
                      font-family: 'Plus Jakarta Sans', sans-serif !important;
                      font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
-                     font-weight: 800 !important;
+                     font-weight: 900 !important;
                      text-align: center;
-                     background: linear-gradient(135deg, #FFFFFF 30%, #A2B4FF 100%);
-                     -webkit-background-clip: text;
-                     -webkit-text-fill-color: transparent;
-                     margin-top: 4.5rem !important;
-                     margin-bottom: 2rem !important;
-                     letter-spacing: -0.5px !important;
-                     text-shadow: 0 0 30px rgba(162, 180, 255, 0.1);
+                     background: linear-gradient(135deg, #FFFFFF 20%, #B9C6FF 60%, #EB459E 100%) !important;
+                     -webkit-background-clip: text !important;
+                     -webkit-text-fill-color: transparent !important;
+                     margin-top: 5rem !important;
+                     margin-bottom: 1.5rem !important;
+                     letter-spacing: -1px !important;
+                     position: relative !important;
+                     padding-bottom: 12px !important;
+                 }
+                 .home-section-title::after {
+                     content: '' !important;
+                     position: absolute !important;
+                     bottom: 0 !important;
+                     left: 50% !important;
+                     transform: translateX(-50%) !important;
+                     width: 60px !important;
+                     height: 3px !important;
+                     background: linear-gradient(90deg, #5865F2, #EB459E) !important;
+                     border-radius: 2px !important;
                  }
         </style>  
-
-                """
-            ,unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
     
 
 
@@ -362,12 +372,36 @@ def style_base_layout():
                 font-family: 'Plus Jakarta Sans', sans-serif !important;
                 font-weight: 900 !important;
                 font-size: clamp(2.5rem, 6vw, 4rem) !important;
-                background: linear-gradient(135deg, #FFFFFF 0%, #A2B4FF 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                background: linear-gradient(120deg, #FFFFFF 20%, #A2B4FF 40%, #EB459E 60%, #FFFFFF 80%) !important;
+                background-size: 200% auto !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
                 text-shadow: 0 0 30px rgba(162, 180, 255, 0.15);
                 margin-bottom: 0.5rem !important;
                 text-align: center;
+                animation: shimmer-text 6s linear infinite !important;
+            }
+
+            .pulse-logo {
+                animation: pulse-logo 8s ease-in-out infinite !important;
+                transition: all 0.5s ease !important;
+            }
+
+            .pulse-logo:hover {
+                transform: scale(1.05) rotate(2deg) !important;
+                filter: drop-shadow(0 0 25px rgba(88, 101, 242, 0.5)) !important;
+            }
+
+            @keyframes shimmer-text {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            @keyframes pulse-logo {
+                0% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(88, 101, 242, 0.15)); }
+                50% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(235, 69, 158, 0.25)); }
+                100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(88, 101, 242, 0.15)); }
             }
 
             .role-title {
