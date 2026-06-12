@@ -182,7 +182,7 @@ def home_screen():
     st.markdown("<h2 class='home-section-title'>Frequently Asked Questions</h2>", unsafe_allow_html=True)
     
     with st.expander("How does the face recognition system work?"):
-        st.write("Attenzy processes uploaded classroom photos or live camera inputs, extracting unique 128-dimensional facial embeddings. These are matched against enrolled student records in real time using a pre-trained SVM classifier.")
+        st.write("Voxitence processes uploaded classroom photos or live camera inputs, extracting unique 128-dimensional facial embeddings. These are matched against enrolled student records in real time using a pre-trained SVM classifier.")
 
     with st.expander("Is my personal biometric data safe?"):
         st.write("Yes! We prioritize privacy. The app does not save any image or audio records. Instead, secure vector embeddings (numerical maps) are extracted and safely stored in the database for presence verification.")

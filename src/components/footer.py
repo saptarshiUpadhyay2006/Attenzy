@@ -9,7 +9,7 @@ def footer_home():
             font-size:14px;
         ">
             <p style="margin:0;">
-                © 2026 Attenzy. All rights reserved. 
+                © 2026 Voxitence. All rights reserved. 
                 Powered by 
                 <a href="https://github.com/saptarshiUpadhyay2006" 
                    target="_blank"
@@ -36,7 +36,7 @@ def footer_dashboard():
             font-size:14px;
         ">
             <p style="margin:0;">
-                © 2026 Attenzy. All rights reserved. 
+                © 2026 Voxitence. All rights reserved. 
                 Powered by 
                 <a href="https://github.com/saptarshiUpadhyay2006" 
                    target="_blank"

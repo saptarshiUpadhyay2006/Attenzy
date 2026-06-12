@@ -7,7 +7,7 @@ from src.components.dialog_auto_enroll import auto_enroll_dialog
 
 def main():
     st.set_page_config(
-        page_title='Attenzy- Attendance with AI',
+        page_title='Voxitence- Attendance with AI',
         page_icon= "https://i.ibb.co/Kx7sWmDR/logo.png",
         layout="wide"
     )

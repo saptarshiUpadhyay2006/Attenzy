@@ -15,7 +15,7 @@ def header_home():
     st.markdown(f"""
             <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:30px; margin-top:10px;">
             <img src="{logo_src}" class="pulse-logo" style="height:180px;" />
-            <h1 class="glow-title">Attenzy</h1>
+            <h1 class="glow-title">Voxitence</h1>
             </div>
                 
                 """,unsafe_allow_html=True)
@@ -26,7 +26,7 @@ def header_dashboard():
     st.markdown(f"""
             <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
             <img src="{logo_src}" style="height:80px;" />
-            <h1 style='text-align:left; color:#E0E3FF; white-space:nowrap; font-size:2.2rem !important; margin:0;'>Attenzy</h1>
+            <h1 style='text-align:left; color:#E0E3FF; white-space:nowrap; font-size:2.2rem !important; margin:0;'>Voxitence</h1>
             </div>
                 
                 """,unsafe_allow_html=True)
